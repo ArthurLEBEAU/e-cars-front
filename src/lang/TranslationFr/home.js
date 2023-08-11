@@ -4,4 +4,22 @@ export  const Home = {
    sorryNotCar:"DESOLÉ! PAS D&apos;ECARS DISPONIBLE",
    descTes:"Ils nous font",
    descTes2:"confiance!",
+   chauffeur:"Chauffeur",
+   withChauffeur:"AVEC CHAUFFEUR",
+   withOutChauffeur:"SANS CHAUFFEUR",
+   chooseModel:"Choisissez un modèle",
+   periode: " Choisissez une période",
+   chooseOption:"Choisir un option",
+   all:"TOUT",
+   find:"Trouver",
+   miniTitle:"Location de Véhicules Premium",
+   bigTitle1:"Bienvenue à ",
+   bigTitle2:" E-Cars",
+   miniText:"Un Service SMS",
+   option1:"SIMPLE",
+   option2:"MODERNE",
+   option3:"SECURISÉ",
+
+  
+
 };
