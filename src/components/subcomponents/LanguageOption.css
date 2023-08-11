@@ -1,0 +1,23 @@
+.contentLang{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.langButton {
+    background-color: none;
+    border: none;
+    height: 35px;
+    width: 35px;
+    /* padding: 10px; */
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 100%;
+
+}
+
+.active {
+    background-color: #696969;
+    color: white;
+}
