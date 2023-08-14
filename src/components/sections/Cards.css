@@ -7,6 +7,10 @@
     align-items: center;
     justify-content: center;
 }
+.centerElement{
+    display: flex;
+    justify-content: center;
+}
 
 .cards {
     padding: 3rem;

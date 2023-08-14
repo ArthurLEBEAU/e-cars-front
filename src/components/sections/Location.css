@@ -54,7 +54,7 @@
         height: 800px;
         padding-inline: 3vw;
         column-gap: 5vw;
-        width: 100vw;
+        /* width: 100vw; */
         display: grid;
         grid-template-areas: 'leftPart' 'rightPart';
     }

@@ -5,7 +5,11 @@ import HeroPage from "../components/sections/HeroPage";
 import Location from "../components/sections/Location";
 import "./About.css";
 
+import { useTranslation } from "react-i18next";
 export default function About() {
+
+	
+	const { t } = useTranslation();
 	return (
 		<>
 			<div className='Ap1'>
@@ -13,7 +17,7 @@ export default function About() {
 			</div>
      
 			<Location />
-			<div className='nve'> Nos véhicules <span> E-cars</span></div>
+			<div className='nve'> {t("ourvehicles")} <span> E-cars</span></div>
 			<Cards/>
      
 		</>

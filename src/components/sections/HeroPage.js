@@ -3,12 +3,14 @@ import "../../App";
 
 import "./HeroPage.css";
 
+import { useTranslation } from "react-i18next";
 function HeroPage() {
   
+	const { t } = useTranslation();
 	return (
 		<div className='herop-container'>
 			<div className='diag'>
-            À propos
+			{t("titleAbout")}
 			</div>
 		</div>
 	);

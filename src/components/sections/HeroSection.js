@@ -17,8 +17,8 @@ function HeroSection() {
 						<div className='mdl'>PRADO</div>
 					</div>
         
-					<div className='prx'>45 000F<span>/j</span> </div>
-					<div className='rsrv'><span id='bar'>______   </span> {t("reserveNow")}</div>
+					<div className='prx'>45 000F<span style={{ color: "red" }}>/j</span> </div>
+					<div className='rsrv'><span id='bar ' style={{ color: "red" }} >______   </span> {t("reserveNow")}</div>
 				</div>
         
         

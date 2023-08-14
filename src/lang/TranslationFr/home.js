@@ -9,7 +9,7 @@ export  const Home = {
    withOutChauffeur:"SANS CHAUFFEUR",
    chooseModel:"Choisissez un modèle",
    periode: " Choisissez une période",
-   chooseOption:"Choisir un option",
+   chooseOption:"Choisir une option",
    all:"TOUT",
    find:"Trouver",
    miniTitle:"Location de Véhicules Premium",

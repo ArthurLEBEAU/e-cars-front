@@ -4,12 +4,14 @@ import  i18n  from "i18next";
 function LanguageOptions() {
 
 
-   const [first, setfirst] = useState("fr");
+   const [first, setfirst] = useState(localStorage.getItem("lang") ?? "fr");
 
 
   const changeLanguage = (lang) => {
+
+    window.location.reload();
     i18n.changeLanguage(lang);
-    
+    localStorage.setItem("lang", lang);
     setfirst(lang);
     
 
