@@ -1,8 +1,7 @@
 import React from "react";
-import "../App.css";
-import Cards from "../components/sections/Cards";
-import HeroPage from "../components/sections/HeroPage";
-import Location from "../components/sections/Location";
+import Cards from "../../components/sections/Cards";
+import HeroPage from "../../components/sections/HeroPage";
+import Location from "../../components/sections/Location";
 import "./About.css";
 
 import { useTranslation } from "react-i18next";

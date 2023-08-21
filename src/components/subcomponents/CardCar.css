@@ -1,0 +1,30 @@
+.card-content{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding:1rem ;
+    border-top: solid 2px #cacaca;
+
+}
+
+.coverCard{
+    height: 400px;
+    width: 500px;
+   display: flex !important;
+   align-items: center;
+   justify-content: center;
+}
+
+.coverCard .voirplus{
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+    
+}
+
+.card-content li {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    list-style-type: none;
+}

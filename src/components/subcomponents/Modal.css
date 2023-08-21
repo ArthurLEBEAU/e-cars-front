@@ -340,3 +340,28 @@ input {
         justify-content: space-between;
     }
 }
+
+
+
+.modal_content {
+    display: flex !important;
+
+    
+    /* justify-content: space-around; */
+  
+}
+
+.modal-left {
+    flex: none;
+
+
+    width:auto;
+}
+
+/* .modal_no_padding > div{
+    padding: 0 !important;
+}
+
+.modal_no_padding {
+    overflow: hidden;
+} */

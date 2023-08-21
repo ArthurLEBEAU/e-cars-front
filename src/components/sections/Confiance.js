@@ -9,7 +9,7 @@ function Confiance() {
 	const { t } = useTranslation();
 	return (
     
-		<div className='ConfianceContainer'>
+		<div className='ConfianceContainer' style={{marginTop:"20px"}}>
 			<div className='partTitle'>
 				<div className='titre_petit'>Testimonials</div>
 				<div className='titre'> {t("descTes")} < span className='TextRed'> {t("descTes2")}</span></div>

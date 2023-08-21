@@ -186,7 +186,7 @@ figcaption {
     .DispoSection_container {
         /*   z-index: 999999; */
         background-color: #F0F1FA;
-        text-align: center;
+        /* text-align: center; */
         display: grid;
         grid-template-areas: 'header header header' 'menu right right';
         gap: 10px;

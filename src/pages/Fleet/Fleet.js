@@ -1,7 +1,6 @@
 import React from "react";
-import "../App.css";
-import Cards from "../components/sections/Cards";
-import DispoSection from "../components/sections/DispoSection";
+import Cards from "../../components/sections/Cards";
+import DispoSection from "../../components/sections/DispoSection";
 
 
 import "./Fleet.css";

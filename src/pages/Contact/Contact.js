@@ -1,8 +1,8 @@
 import React from "react";
-import "../App.css";
 
-import ContactSection from "../components/sections/ContactSection";
-import DispoSection from "../components/sections/DispoSection";
+
+import ContactSection from "../../components/sections/ContactSection";
+import DispoSection from "../../components/sections/DispoSection";
 
 
 import "./Contact.css";

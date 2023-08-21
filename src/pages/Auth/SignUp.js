@@ -1,4 +1,4 @@
-import "../App.css";
+
 import "./SignUp.css";
 import jwtDecode from "jwt-decode";
 import { useHistory } from "react-router-dom";

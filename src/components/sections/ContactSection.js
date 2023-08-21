@@ -1,5 +1,5 @@
 import React from "react";
-import "../../pages/Contact";
+import "../../pages/Contact/Contact";
 function ContactSection() {
   return (
     
