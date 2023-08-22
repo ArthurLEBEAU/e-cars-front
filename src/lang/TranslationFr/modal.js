@@ -1,0 +1,26 @@
+export const modalContent = {
+    titleModal1:"Effectuer la demande",
+    resume:"Resumé",
+    priceLocation:"Prix de location de la voiture",
+    priceLocationWithDriver:"Prix de location de la voiture avec chauffeur",
+    supplementOutAbidjan:"Supplement pour les locations hors d'abidjan:",
+    fraisLivrai:"Frais de livraison:",
+    estimationTotal:"Estimation totale de la demande:",
+    name:"Nom & prénoms / Nom de l'entreprise",
+    mail:"Email",
+    telephone:"Numero de telephone:",
+ 
+    ruleName:"Veuillez entrez votre nom complet",
+    ruleMail:"Veuillez entrez votre email",
+    rulePhone:"Veuillez entrez votre numero de telephone",
+    rulePeriode:"Veuillez entrez votre periode de location",
+   
+   demandeSuccess:"Demande Effectué",
+   demandeDesc:"Votre demande a bien été envoyée , vous recevrez une réponse dans les plus brefs délais",
+   error:"Une erreur est survenue",
+    outAbidjan:"Hors d'Abidjan",
+    withDriver:"Avec chauffeur",
+    delivery:"A livrer ?",
+    validRequest:"Valider la demande",
+    per:"pour",
+};

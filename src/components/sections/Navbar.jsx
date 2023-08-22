@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "../subcomponents/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import checkTokenExpiration from "../../hooks/checkTokenExpiration";
@@ -16,7 +15,7 @@ function Navbar() {
 	}
 
 	const [click, setClick] = useState(false);
-	const [button, setButton] = useState(true);
+	const [, setButton] = useState(true);
 
 	const handleClick = () => setClick(!click);
 	const closeMobileMenu = () => setClick(false);

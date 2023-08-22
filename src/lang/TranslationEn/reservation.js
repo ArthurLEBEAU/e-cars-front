@@ -1,7 +1,6 @@
 export const Reservation = {
-    titleReservation: "Reservation",
-    sndeTitle: "Your Reservations",
-    sndeTitle2: "E-cars",
-    sndeTitle3: "In Progress",
-    history: "History",
+    titleReservation: "Reservations",
+    searchReservation: "Search for your reserved vehicles",
+    descriptionReserVation: "Enter your unique identification code received by email to access the car you have reserved.",
+    placeHolderRe: "Search for your vehicle",
 };

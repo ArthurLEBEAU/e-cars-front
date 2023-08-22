@@ -19,4 +19,16 @@ export const Home = {
    option1: "SIMPLE",
    option2: "MODERN",
    option3: "SECURE",
+   startDate: "Start Date",
+   endDate: "Back Date",
+   seeMore: "SEE MORE",
+   toLeave: "From ",
+   unAvailable: "Unavailable",
+   day: "Day",
+   request: "REQUEST"
+
+
+
+
+   
 };

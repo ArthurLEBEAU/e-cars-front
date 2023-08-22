@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DispoSection.css";
 // import DatePicker from "../subcomponents/DatePicker";
-import DropDown from "../subcomponents/Dropdown";
 
 import { useTranslation } from "react-i18next";
-import { Button, Select, DatePicker, Form, Radio } from "antd";
+import { Button, Select, DatePicker, Form, Radio, Row, Col } from "antd";
+import { setSearch } from "../../redux/features/slices/searchSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 
 
@@ -13,22 +15,50 @@ function DispoSection(
 ) {
 
 	const { RangePicker } = DatePicker;
+	const onReset = () => {
 
+		form.resetFields();
+		dispatch(setSearch(null));
+	};
 
+	const dispatch = useDispatch();
 	const { t } = useTranslation();
-	const [selected, setSelected] = useState("");
-	const [driver, setDriver] = useState("");
-	const [date, setDate] = useState(new Date());
-	const [date1, setDate1] = useState(new Date());
 	const OPTIONS1 = ["BERLIN", "CITADINE", "SUV", "4X4", t("all")];
 	const OPTIONS2 = [t("withChauffeur"), t("withOutChauffeur")];
 	const STANDAR = [t("startDate"), t("endDate"), t("chooseModel"), t("chooseOption")];
+
+
+	const Search = (value) => {
+		console.log(value);
+		dispatch(setSearch(value));
+	};
+
+	useEffect(() => {
+		dispatch(setSearch(null));
+	}, []);
+	
+
+	const search = useSelector((state) => state.searchSlice.search);
+	const [form] = Form.useForm();
+
+
+	const ChooseBox = (item) => {
+		console.log(item, "'oomomom'");
+		let searchBox = {
+			...search,
+			box: item
+		};
+		dispatch(setSearch(searchBox));
+
+	};
+
+
 
 	return (
 
 		<div className='bienvenueContainer'>
 
-			<Form onFinish={(value) => console.log(value, "valueSearch")} layout="vertical" className='flotingDiv' style={{ zIndex: "999" }}>
+			<Form form={form} onFinish={(value) => Search(value)} layout="vertical" className='flotingDiv' style={{ zIndex: "999" }}>
 
 
 				<div >
@@ -92,17 +122,25 @@ function DispoSection(
 					/>
 				</Form.Item>
 
-				<Button type="primary" size="large" htmlType="submit" >{t("find")}</Button>
-				{/* <div className='Trouver'>{t("find")}</div> */}
+				<Row gutter={[16, 16]}>
+					{search && <Col >
+						<Button type="default" size="large" onClick={onReset} >Arreter la recherche</Button>
+					</Col>}
+
+
+					<Col >
+						<Button type="primary" size="large" htmlType="submit" >{t("find")}</Button>
+					</Col>
+				</Row>
 
 
 
-				<Radio.Group buttonStyle="solid">
-					<Radio.Button value="a">Boite auto</Radio.Button>
-					<Radio.Button value="b">Boite manuel</Radio.Button>
+				<Radio.Group onChange={(e) => ChooseBox(e.target.value)} buttonStyle="solid">
+					<Radio.Button value="auto">Boite auto</Radio.Button>
+					<Radio.Button value="manuel">Boite manuel</Radio.Button>
 
 				</Radio.Group>
-
+				
 			</Form>
 
 

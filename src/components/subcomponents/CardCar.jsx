@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import { Card, Button } from "antd";
 import "./CardCar.css";
 import { useTranslation } from "react-i18next";
-function CardCar({ car }) {
+function CardCar({ car , noRequest }) {
 
 	const [openModal, setOpenModal] = useState(false);
 
@@ -52,7 +52,7 @@ function CardCar({ car }) {
 
 				<div className='btn_space2'>
 					<div className='btn_space2_h'>{t("toLeave")}</div>
-					<div className='btn_space2_b'> <span style={{ fontSize: 20, fontWeight: "bold" }}>{car.price_no_driver}</span>  CFA/Jour</div>
+					<div className='btn_space2_b'> <span style={{ fontSize: 20, fontWeight: "bold" }}>{car.price_no_driver}</span>  CFA/{t("day")}</div>
 				</div>
 
 			</Card>
@@ -106,7 +106,7 @@ function CardCar({ car }) {
 
 
 
-			<Modal car={car} marqModel={marqModel}
+			<Modal car={car} noRequest={noRequest} marqModel={marqModel}
 				open={openModal}
 				onClose={() => setOpenModal(false)} />
 

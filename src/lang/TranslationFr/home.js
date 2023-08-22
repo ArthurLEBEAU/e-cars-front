@@ -24,5 +24,11 @@ export  const Home = {
    seeMore:"VOIR PLUS",
    toLeave:"A partir de ",
    unAvailable:"Indisponible",
+   day:"Jour",
+   request:"DEMANDER",
 
+
+
+
+   // form 
 };

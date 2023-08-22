@@ -1,6 +1,5 @@
 
 import "./SignUp.css";
-import jwtDecode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 
 import React, { useState } from "react";

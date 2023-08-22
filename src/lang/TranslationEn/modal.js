@@ -1,0 +1,26 @@
+export const modalContent = {
+    titleModal1: "Submit Request",
+    resume: "Summary",
+    priceLocation: "Car Rental Price",
+    priceLocationWithDriver: "Car Rental Price with Driver",
+    supplementOutAbidjan: "Supplement for rentals outside Abidjan:",
+    fraisLivrai: "Delivery Fee:",
+    estimationTotal: "Total Request Estimate:",
+    name: "Name & Surname / Company Name",
+    mail: "Email",
+    telephone: "Phone Number:",
+ 
+    ruleName: "Please enter your full name",
+    ruleMail: "Please enter your email",
+    rulePhone: "Please enter your phone number",
+    rulePeriode: "Please enter your rental period",
+   
+    demandeSuccess: "Request Submitted",
+    demandeDesc: "Your request has been successfully sent. You will receive a response shortly.",
+    error: "An error occurred",
+    outAbidjan: "Outside Abidjan",
+    withDriver: "With Driver",
+    delivery: "Delivery?",
+    validRequest: "Validate Request",
+    per: "for",
+};

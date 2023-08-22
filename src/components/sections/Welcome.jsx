@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect,  } from "react";
 import "./Welcome.css";
 // import DatePicker from "../subcomponents/DatePicker";
-import DropDown from "../subcomponents/Dropdown";
 
 import { useTranslation } from "react-i18next";
 
-import { Select, DatePicker, Button, Form, Radio, Row, Col } from "antd";
-import { useDispatch } from "react-redux";
+import { Select, DatePicker, Button, Form , Row, Col } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../../redux/features/slices/searchSlice";
 
 
@@ -17,6 +16,12 @@ function Welcome(
 	const { t } = useTranslation();
 
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(setSearch(null));
+	}, []);
+	
+
 	// const [selected, setSelected] = useState(""),
 
 	// 	[driver, setDriver] = useState(""),
@@ -30,6 +35,8 @@ function Welcome(
 		console.log(value);
 		dispatch(setSearch(value));
 	};
+
+	const search = useSelector((state) => state.searchSlice.search);
 	const [form] = Form.useForm();
 
 	const onReset = () => {
@@ -106,15 +113,16 @@ function Welcome(
 
 
 
-				<Row gutter={[16, 16]}>
-					<Col >
-						<Button type="default" size="large" onClick={onReset} >Arreter la recherche</Button>
-					</Col>
+					<Row gutter={[16, 16]}>
+						{search && <Col >
+							<Button type="default" size="large" onClick={onReset} >Arreter la recherche</Button>
+						</Col>}
+						
 
-					<Col >
-						<Button type="primary" size="large" htmlType="submit" >{t("find")}</Button>
-					</Col>
-				</Row>
+						<Col >
+							<Button type="primary" size="large" htmlType="submit" >{t("find")}</Button>
+						</Col>
+					</Row>
 
 				{/* <div className='Trouver'>{t("find")}</div> */}
 

@@ -3,20 +3,11 @@ import "./Modal.css";
 import ModalClient from "./ModalClient";
 import { Modal, Carousel, Button, Image } from "antd";
 import { useTranslation } from "react-i18next";
-function ModalCar({ marqModel, car, open, onClose }) {
+function ModalCar({ marqModel, car, open, onClose, noRequest }) {
 	const [openModal1, setOpenModal1] = useState(false);
 
-	const [style, setStyle] = useState(car.image1);
 
 	const { t } = useTranslation();
-	const contentStyle = {
-		margin: 0,
-		height: "160px",
-		color: "#fff",
-		lineHeight: "160px",
-		textAlign: "center",
-		background: "#364d79",
-	};
 
 
 	if (!open) return null;
@@ -45,8 +36,8 @@ function ModalCar({ marqModel, car, open, onClose }) {
 					</div>
 
 					<div className='modalRight'>
-						
-						<div className='content'>
+
+						<div className='contentModal'>
 							<div className='marq_modal'> {marqModel}</div>
 
 							<ul className='caracterisq_modal'>
@@ -62,23 +53,25 @@ function ModalCar({ marqModel, car, open, onClose }) {
 							<div className="price_zone">
 								<div className="zone1">
 									<div className='apa_modal'> {t("toLeave")}</div>
-									{car.price_no_driver ? (<div className='prix_modal'>{car.price_no_driver} CFA/Jour </div>) : (
+									{car.price_no_driver ? (<div className='prix_modal'>{car.price_no_driver} CFA/{t("day")} </div>) : (
 										<div className='prix_modal'> {t("unavailable")}  </div>
 									)}
 								</div>
 
 								<div className="zone1">
 									<div className='apa_modal'> {t("withChauffeur")}</div>
-									{car.price_with_driver ? (<div className='prix_modal'>{car.price_with_driver} CFA/Jour </div>) : (
+									{car.price_with_driver ? (<div className='prix_modal'>{car.price_with_driver} CFA/{t("day")} </div>) : (
 										<div className='prix_modal'>  {t("unavailable")}  </div>
 									)}
 
 								</div>
 							</div>
 
+							{
+								noRequest ? <></> : <Button type="primary" style={{ marginTop: "20px" }} size="large" onClick={() => setOpenModal1(true)}>{t("request")}</Button>
 
+							}
 
-							<Button type="primary" style={{ marginTop: "20px" }} size="large" onClick={() => setOpenModal1(true)}>DEMANDER</Button>
 
 
 

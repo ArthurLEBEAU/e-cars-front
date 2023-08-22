@@ -3,13 +3,10 @@ import { apiSlice } from "../apiSlice";
 export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     //Queries
-    getCars: builder.query({
-      query: () => "exemple",
-      providesTags: ["exemple"],
-    }),
-    searchCar: builder.query({
-      query: (name) => `/exemple/${name}`,
-      providesTags: ["exemple"],
+  
+    getRequestId: builder.query({
+      query: (name) => `/request/${name}`,
+     
     }),
     //Mutations
     requestCar: builder.mutation({
@@ -26,6 +23,6 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useGetCarsQuery,
-  useSearchCarQuery,
+useGetRequestIdQuery,
   useRequestCarMutation,
 } = extendedApiSlice;

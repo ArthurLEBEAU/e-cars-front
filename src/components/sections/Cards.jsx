@@ -9,12 +9,14 @@ import {
 import { useTranslation } from "react-i18next";
 import { Button } from "antd";
 import { useSelector } from "react-redux";
-function Cards() {
+function Cards({isFleet}) {
 
 	const { t } = useTranslation();
 	// eslint-disable-next-line no-undef
 	const { DATA: CARSDATA , ISLOADED } = UseFetch(process.env.REACT_APP_API_URL + "car/");
 	const search = useSelector((state) => state.searchSlice.search);
+
+	
 
 	function rechercherElements(tableau, critere) {
 		const resultats = tableau.filter(element => {
@@ -50,8 +52,9 @@ function Cards() {
 							<div className='grid_container'> {t("sorryNotCar")} </div>
 						)
 					} 
-		
-					<div className="centerElement">
+
+					{
+						isFleet ? <></>: <div className="centerElement">
 						<Link
 							to='/fleet'
 						>
@@ -60,6 +63,9 @@ function Cards() {
 		
 						</Link>
 					</div>
+					}
+		
+					
 					</div>
 				}
 

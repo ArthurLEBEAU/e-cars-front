@@ -4,21 +4,27 @@ import DispoSection from "../../components/sections/DispoSection";
 
 
 import "./Fleet.css";
+import { useTranslation } from "react-i18next";
 
 export default function Fleet() {
+
+
+	const { t } = useTranslation();
+
+
 	return (
 		<>
 			<div className='Ap2'>
 				<div className='herop-container'>
 					<div className='diag'>
-            Notre flotte
+					{t("titleFleet")}
 					</div>
 				</div>
 			</div>
 			<DispoSection />
     
-			<div className='nve'> Nos véhicules <span> E-cars</span></div>
-			<Cards/>
+			<div className='nve'> {t("ourvehicles")} <span style={{ color: "red" }}> E-cars</span></div>
+			<Cards isFleet/>
      
 		</>
 	);
