@@ -20,8 +20,10 @@ function ContactSection() {
         <div className='CercleRed'></div>
         <div className='e_c'> E-CARS</div>
         </div>
-        <div className='ct'> <span> TEL: </span> +225 00 00 00 00 00</div>
-        <div  className='ct'><span> EMAIL: </span> myemail@gmail.com</div>
+        <div className='ct'> <span> TEL: </span> +225 05 84 947 108</div>
+        <div  className='ct'><span> EMAIL: </span>  contact@e-cars.africa</div>
+        <div  className='ct'> <span> INSTAGRAM: </span>Abidjan</div>
+        <div  className='ct'> <span> FACEBOOK: </span>Abidjan</div>
         <div  className='ct'> <span> LIEU: </span>Abidjan</div>
         </div>
         <div className='btnEnvoyer'>ENVOYER  </div>

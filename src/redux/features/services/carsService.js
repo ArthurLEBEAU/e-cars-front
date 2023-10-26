@@ -6,7 +6,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   
     getRequestId: builder.query({
       query: (name) => `/request/${name}`,
-     
+    
     }),
     //Mutations
     requestCar: builder.mutation({

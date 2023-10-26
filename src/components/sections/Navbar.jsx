@@ -58,7 +58,7 @@ function Navbar() {
 									className='nav-links-1'
 									onClick={closeMobileMenu}
 								>
-									support@ecars.africa
+									 contact@e-cars.africa
 								</Link>
 							</li>
 							<li className='spacer'>|</li>

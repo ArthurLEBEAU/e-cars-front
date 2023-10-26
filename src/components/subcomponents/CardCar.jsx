@@ -25,7 +25,7 @@ function CardCar({ car , noRequest }) {
 				hoverable
 				ref={hoverRef}
 
-				cover={<div className='coverCard ' style={{ backgroundImage: isHovered ? `url("${car.image2}")` : `url("${car.image1}")` }}>
+				cover={<div className='coverCard ' style={{ backgroundImage: isHovered ? `url("${car.image2}")` : `url("${car.image1}")`,  backgroundSize: 'cover',  }}>
 					<Button style={{ display: isHovered ? "block" : "none" }} type="primary">
 					{t("seeMore")}
 					</Button>
