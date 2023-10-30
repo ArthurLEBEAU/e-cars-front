@@ -70,19 +70,70 @@ const ModalClient = ({ car, open, onClose }) => {
 		});
 
 		try {
-			await requestCar({
-				carId: car.id,
-				clientName: values.name,
-				clientPhone: values.telephone,
-				clientEmail: values.email,
-				isDriver: condition.withDriver,
-				isGoOutCity: condition.outCity,
-				isDelivery: condition.withDelivery,
-				startDate: formattedDates[0],
-				endDate: formattedDates[1],
+			const carResponse = await requestCar({
+			  carId: car.id,
+			  clientName: values.name,
+			  clientPhone: values.telephone,
+			  clientEmail: values.email,
+			  isDriver: condition.withDriver,
+			  isGoOutCity: condition.outCity,
+			  isDelivery: condition.withDelivery,
+			  startDate: formattedDates[0],
+			  endDate: formattedDates[1],
 			}).unwrap();
+		
+			// Extraire l'ID de la réponse de la première requête
+			const transactionId = carResponse.id;
+		
+			// Utilisez l'ID dans la deuxième requête
+			let calculatedAmount;
+if (condition.numberOfDays === 0) {
+  calculatedAmount = (condition.withDriver ? car.price_with_driver : car.price_no_driver) + (condition.outCity ? 10000 : 0) + (condition.withDelivery ? 10000 : 0);
+} else {
+  calculatedAmount = (((condition.withDriver ? car.price_with_driver : car.price_no_driver) + (condition.outCity ? 10000 : 0)) * (condition.numberOfDays + 1)) + (condition.withDelivery ? 10000 : 0);
+}
+			const paynahData = {
+			  amount: calculatedAmount,
+			  api_key: "f9556516-fe86-4004-b48a-fcd558d0d0c8",
+			  transaction_id: transactionId, // Utilisez l'ID extrait
+			  description: "Paiement test ONECI",
+			  lang: "fr",
+			  currency: "XOF",
+			  channel: "MOBILE_MONEY",
+			  country_code: "CI",
+			  customer_firstname: values.name,
+			  customer_lastname: null,
+			  customer_email: values.email,
+			  customer_phone_number: null,
+			  customer_address: "",
+			  customer_city: "",
+			  customer_country: null,
+			  customer_zip_code: "",
+			  notif_url: "https://www.webhok.ci",
+			  return_url: "https://www.google.com",
+			};
+		
+			// Effectuez la deuxième requête POST vers l'URL de Paynah
+			const paynahResponse = await fetch("https://api-v2.paynah.com/payin/v1/intents", {
+			  method: "POST",
+			  headers: {
+				"Content-Type": "application/json",
+			  },
+			  body: JSON.stringify(paynahData),
+			});
+		
+			// Vérifiez la réponse de la deuxième requête
+			if (paynahResponse.ok) {
+				const paynahData = await paynahResponse.json();
 
-
+				// Ouvrir l'URL dans une nouvelle fenêtre ou un nouvel onglet du navigateur
+				window.open(paynahData.data.url, "_blank");
+				console.log("Deuxième requête réussie : ", paynahData);
+				// Faites quelque chose avec la réponse, si nécessaire
+			} else {
+			  // La deuxième requête a échoué
+			  console.error("Erreur lors de la deuxième requête : ", paynahResponse);
+			}
 
 		} catch (err) { console.log(err); }
 
@@ -194,7 +245,7 @@ const ModalClient = ({ car, open, onClose }) => {
 
 
 
-									(((condition.withDriver ? car.price_with_driver : car.price_no_driver) + (condition.outCity ? 10000 : 0)) * condition.numberOfDays + 1) + (condition.withDelivery ? 10000 : 0)
+									(((condition.withDriver ? car.price_with_driver : car.price_no_driver) + (condition.outCity ? 10000 : 0)) * (condition.numberOfDays + 1)) + (condition.withDelivery ? 10000 : 0)
 								}
 
 
